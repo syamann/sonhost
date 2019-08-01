@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -13,13 +14,38 @@
 
 Route::get("/",function ()
 {
-    return view('create');
+    return view('welcome');
 });
 Route::get("/create", [
-    'as'   =>'web.question.index',
-    'uses' =>'QuestionsController@index',
+    'as'   =>'create',
+    'uses' =>'QuestionsController@create',
 ]);
 Route::post("/create", [
     'as'   =>'web.question.store',
     'uses' =>'QuestionsController@store',
 ]);
+Route::get("/edit/{qid?}", [
+    'as'   =>'web.question.edit',
+    'uses' =>'QuestionsController@edit',
+]);
+Route::post("/edit/{qid}", [
+    'as'   =>'web.question.update',
+    'uses' =>'QuestionsController@update',
+]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/index', [
+    'as'=>'index',
+    'uses'=>'QuestionsController@index'
+]);
+
+//Route::get('/delete', [
+  //  'as'=>'delete',
+    //'uses'=>'QuestionsController@delete'
+//]);
+Route::get('/delete/{qid?}',array('as'=>'delete','uses'=>'QuestionsController@delete'));
+
+

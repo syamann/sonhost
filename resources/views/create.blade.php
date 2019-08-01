@@ -1,9 +1,9 @@
-
-<!DOCTYPE html>
+@extends('layouts.app')
+        <!DOCTYPE html>
 <html>
 <head>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <style>
         #loading-img{
             display:none;
@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-8">
                 <h1 width="80px">Bize Sorun</h1>
-                <form name="contact-form"  method="post" action="{{route('web.question.store')}}" id="contact-form">
+                <form name="contact-form"  method="post" action="{{route('web.question.store')}}" qid="contact-form">
 
                     <div class="boxDetail row clearfix">
 
@@ -58,15 +58,64 @@
                         <label for="aciklama">Açıklama</label>
                         <textarea name="aciklama" class="form-control" rows="3" cols="28" rows="5" placeholder="Sorunuzu yazınız."></textarea>
                     </div>
+                    <!doctype html>
+                    <html class="demo">
+                    <head>
+                        <meta charset="utf-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+                        <!--[if lt IE 9]>
+
+                        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                        <script src="js/respond.min.js"></script>
+
+                        <![endif]-->
+                    </head>
+
+                    </div></div>
+        <div class="form-group">
+
+
+                    <label for="multiple" class="control-label"  >Etiket</label>
+                    <select qid="multiple" class="form-control select2-multiple" name="label" multiple>
+                        <optgroup label="~Eklenmiş Etiketler~">
+
+                            <option value="bug" >Bug</option>
+                            <option value="kargo" >Kargo</option>
+                            <option value="acil">Acil</option>
+                            <option value="hasarli">Hasarlı</option>
+                            <option value="iade">İade</option>
+
+                        </optgroup>
+                        <optgroup label="Ekleyeceğiniz Etiketi Bulamadıysanız Burdan Ekleyebilirsiniz..">
+                            <option value="+" >EKLE</option>
+                        </optgroup>
+                    </select>
+                    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script>
+
+                    <script>
+                        var placeholder = "Lütfen Etiket Seçiniz...";
+                        $( ".select2-single, .select2-multiple" ).select2( {
+                            tags: true,
+                            tokenSeparators: [',', ' '],
+                            placeholder: placeholder,
+                            containerCssClass: ':all:'
+                        } );
+
+                    </script>
+        </div></div></body>
+                    </html>
                     <label for=""></label>
 
                     <input type="submit" name="submit" value="submit">
 
                     <div class="response_msg"></div>
-            </div>
+               </form> </div>
         </div></div>
 
-</form>
+
 
 </body>
 
