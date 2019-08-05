@@ -9,6 +9,6 @@ class QuestionsModel extends Model
     //
     protected  $fillable =['baslik','konu','email','aciklama','label'];
     protected $table='questions';
-    protected $primaryKey='qid';
+    protected $primaryKey='id';
     public $timestamps = false;
 }

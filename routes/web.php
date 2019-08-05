@@ -24,11 +24,11 @@ Route::post("/create", [
     'as'   =>'web.question.store',
     'uses' =>'QuestionsController@store',
 ]);
-Route::get("/edit/{qid?}", [
+Route::get("/edit/{id}", [
     'as'   =>'web.question.edit',
     'uses' =>'QuestionsController@edit',
 ]);
-Route::post("/edit/{qid}", [
+Route::post("/edit/{id}", [
     'as'   =>'web.question.update',
     'uses' =>'QuestionsController@update',
 ]);
@@ -46,6 +46,6 @@ Route::get('/index', [
   //  'as'=>'delete',
     //'uses'=>'QuestionsController@delete'
 //]);
-Route::get('/delete/{qid?}',array('as'=>'delete','uses'=>'QuestionsController@delete'));
+Route::get('/delete/{id?}',array('as'=>'delete','uses'=>'QuestionsController@delete'));
 
 

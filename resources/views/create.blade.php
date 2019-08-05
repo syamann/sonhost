@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-8">
                 <h1 width="80px">Bize Sorun</h1>
-                <form name="contact-form"  method="post" action="{{route('web.question.store')}}" qid="contact-form">
+                <form name="contact-form"  method="post" action="{{route('web.question.store')}}" id="contact-form">
 
                     <div class="boxDetail row clearfix">
 
@@ -78,7 +78,7 @@
 
 
                     <label for="multiple" class="control-label"  >Etiket</label>
-                    <select qid="multiple" class="form-control select2-multiple" name="label" multiple>
+                    <select id="multiple" class="form-control select2-multiple" name="label" multiple>
                         <optgroup label="~Eklenmiş Etiketler~">
 
                             <option value="bug" >Bug</option>
@@ -88,9 +88,7 @@
                             <option value="iade">İade</option>
 
                         </optgroup>
-                        <optgroup label="Ekleyeceğiniz Etiketi Bulamadıysanız Burdan Ekleyebilirsiniz..">
-                            <option value="+" >EKLE</option>
-                        </optgroup>
+
                     </select>
                     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
                     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script>

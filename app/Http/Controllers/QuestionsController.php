@@ -52,7 +52,7 @@ return view ('create');
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($qid)
+    public function show($id)
     {
 
     }
@@ -63,10 +63,10 @@ return view ('create');
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($qid = 0)
+    public function edit($id = 0)
     {
         //
-         $question = QuestionsModel::find($qid);
+         $question = QuestionsModel::find($id);
          return view('question.edit', compact('question'));
     }
 
@@ -75,15 +75,22 @@ return view ('create');
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response-
      */
-    public function update(Request $request, $qid)
+    public function update($id, Request $request )
     {
         //
-        $question = QuestionsModel::all();
-        $question::edit(Request($qid));
+        $question = QuestionsModel::find($id);
+        $question->baslik=request('baslik');
+        $question->konu=request('konu');
+        $question->aciklama=request('aciklama');
+        $question->email=request('email');
+        $question->update();
+
+        return view('question.33', compact('question'));
 
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -91,12 +98,12 @@ return view ('create');
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function delete($qid)
+    public function delete($id)
     {
         //
 
-         if ($qid != 0) {
-             $questiondelete = QuestionsModel::where('qid', '=', $qid)->delete();
+         if ($id != 0) {
+             $questiondelete = QuestionsModel::where('id', '=', $id)->delete();
              if ($questiondelete) {
                  return 'Silindi :))';
 

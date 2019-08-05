@@ -14,7 +14,7 @@ class CreateLabelQuestionTable extends Migration
     public function up()
     {
         Schema::create('_label_question', function (Blueprint $table) {
-            $table->bigIncrements('qid');
+            $table->bigIncrements('id');
             $table->integer('lid');
 
         });
