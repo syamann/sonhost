@@ -81,7 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+
+                 @if(session()->has('message'))
+{{session ('message')}}
+
+                     @endif
+
                 </div>
 
                 <div class="links">

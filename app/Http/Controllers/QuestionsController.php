@@ -87,7 +87,7 @@ return view ('create');
         $question->email=request('email');
         $question->update();
 
-        return view('question.33', compact('question'));
+        return redirect('/index');
 
     }
 
@@ -105,8 +105,8 @@ return view ('create');
          if ($id != 0) {
              $questiondelete = QuestionsModel::where('id', '=', $id)->delete();
              if ($questiondelete) {
-                 return 'Silindi :))';
 
+return redirect('/')->withMessage('başarı');
              } else {
                  return null;
              }

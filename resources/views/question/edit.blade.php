@@ -10,5 +10,6 @@
     <input type="email" name="email"  placeholder="Email adresinizi giriniz" value="{{$question->email}}">
     <input type="longtext" name="aciklama" placeholder="Sorunuzu yazınız" value="{{$question->aciklama}}">
     <input type="submit"  value="Kaydet">
+
 </form>
 @stop

@@ -16,6 +16,10 @@
             width:250px;
             padding:3px;
             display:none;
+
+        }
+        .ttl{
+            width:600px;
         }
     </style>
 </head>
@@ -35,7 +39,7 @@
                             <div class="col-md-4 frmSubjects">
                                 <div class="ttl">Konu:</div>
 
-                                <select class="form-control" name="baslik">
+                                <select class="form-control" name="baslik" >
                                     <option value="0">Konu Seçiniz...</option>
                                     <option value="1">Sipariş</option>
                                     <option value="Site Hakkında">Site Hakkında</option>
@@ -44,10 +48,11 @@
                                 </select>
                             </div>
 
-                        </div></div>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="konu">Konu</label>
-                        <input type="text" class="form-control" name="konu" placeholder="konu" required>
+                        <input type="text" class="form-control" name="konu" placeholder="Konu" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email adresi</label>
@@ -73,7 +78,10 @@
                         <![endif]-->
                     </head>
 
-                    </div></div>
+
+            </div>
+        </div>
+
         <div class="form-group">
 
 
@@ -103,16 +111,16 @@
                         } );
 
                     </script>
-        </div></div></body>
+        </div>
+    </div>
+</body>
                     </html>
                     <label for=""></label>
 
-                    <input type="submit" name="submit" value="submit">
+                    <input type="submit" name="submit" value="Gönder">
 
                     <div class="response_msg"></div>
-               </form> </div>
-        </div></div>
-
+               </form>
 
 
 </body>
